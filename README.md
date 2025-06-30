@@ -53,16 +53,6 @@ DocuMind AI, PDF formatındaki kurumsal dokümanlardan anlamlı bilgi çıkarmay
 | Hata Kodu | Açıklama | Çözüm |
 |-----------|----------|-------|
 | 401 Unauthorized | API anahtarınız yanlış veya süresi dolmuş olabilir. | Yeni bir anahtar oluşturun ve .env dosyanıza ekleyin. |
-| 429 Quota Exceeded | Ücretsiz kullanım kotası doldu. | Bir süre bekleyin veya faturalandırma ekleyin. |
-| 404 Model Not Found | Model adı hatalı girilmiş olabilir. | `models/gemini-1.5-pro-latest` model adını kullanmanız önerilir. |
-
-## Katkı ve İletişim
-
-Projeye katkıda bulunmak isterseniz, lütfen pull request gönderin veya issue açın.  
-Her türlü soru ve öneriniz için aşağıdaki iletişim adresini kullanabilirsiniz:
-
-- Geliştirici: **Kübra Keskin**
-- E-posta: kubrakeskin.2209@gmail.com
 
 ---
 
