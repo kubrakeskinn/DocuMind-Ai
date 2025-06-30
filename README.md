@@ -1,7 +1,5 @@
 # DocuMind AI: Kurumsal PDF Soru-Cevap Platformu
 
-![Uygulama Arayüzü](docs/arayuz-gorseli.png)
-
 ## Proje Hakkında
 
 DocuMind AI, PDF formatındaki kurumsal dokümanlardan anlamlı bilgi çıkarmayı ve bu dokümanlara doğal dilde soru sorarak yanıt almayı mümkün kılan bir yapay zeka uygulamasıdır. Sistem, Google Gemini API altyapısı ile çalışmakta olup, metin vektörleştirme ve semantik arama işlemlerini ChromaDB ile gerçekleştirmektedir. Uygulama, kullanıcı dostu bir arayüz ile etkileşimli ve hızlı bir deneyim sunar.
@@ -15,14 +13,6 @@ DocuMind AI, PDF formatındaki kurumsal dokümanlardan anlamlı bilgi çıkarmay
 - Türkçe dil desteği ve detaylı cevaplar
 - Streamlit tabanlı modern arayüz
 - Güvenli API anahtarı yönetimi
-
-## Arayüz
-
-Aşağıda, uygulamanın örnek arayüzüne ait bir görsel yer almaktadır:
-
-![Uygulama Arayüzü](docs/arayuz-gorseli.png)
-
-> Lütfen kendi arayüz görselinizi `docs/arayuz-gorseli.png` olarak ekleyiniz.
 
 ## Kurulum ve Kullanım
 
