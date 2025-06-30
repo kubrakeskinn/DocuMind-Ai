@@ -4,3 +4,4 @@ chromadb
 pymupdf
 python-dotenv
 tiktoken 
+google-generativeai

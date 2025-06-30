@@ -1,12 +1,11 @@
 import os
-import openai
+import google.generativeai as genai
 from dotenv import load_dotenv
 
 load_dotenv()
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-LLM_MODEL = os.getenv("OPENAI_LLM_MODEL", "gpt-4")
-openai.api_key = OPENAI_API_KEY
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+genai.configure(api_key=GEMINI_API_KEY)
 
 # Prompt template ve yanıt üretimi
 PROMPT_TEMPLATE = """
@@ -22,10 +21,22 @@ Yalnızca yukarıdaki içerikten faydalanarak, Türkçe ve detaylı bir yanıt v
 def generate_answer(question, relevant_chunks):
     context = "\n\n".join(relevant_chunks)
     prompt = PROMPT_TEMPLATE.format(context=context, question=question)
-    response = openai.ChatCompletion.create(
-        model=LLM_MODEL,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.2,
-        max_tokens=512
-    )
-    return response["choices"][0]["message"]["content"].strip() 
+    model = genai.GenerativeModel("models/gemini-1.5-pro-latest")
+    response = model.generate_content(prompt)
+    return response.text.strip()
+
+if __name__ == "__main__":
+    # Anahtarı test etmek için küçük bir kod
+    try:
+        test_client = genai.GenerativeModel("gemini-pro")
+        models = test_client.list_models()
+        print("API anahtarınız çalışıyor! Mevcut modeller:")
+        for model in models.data:
+            print(model.id)
+    except Exception as e:
+        print("API anahtarınız çalışmıyor veya erişim yok!")
+        print(e)
+
+    print("Erişebildiğiniz Gemini modelleri:")
+    for m in genai.list_models():
+        print(m.name) 

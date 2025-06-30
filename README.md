@@ -5,9 +5,9 @@ Kurumsal PDF dokümanlarından anlam çıkaran, kullanıcıların bu dokümanlar
 ## Özellikler
 - PDF yükleme ve metin çıkarımı
 - 500-700 tokenlık parçalara bölme
-- OpenAI Embedding API ile vektörleştirme
+- Google Gemini API ile vektörleştirme (embedding)
 - ChromaDB ile vektör saklama ve arama
-- OpenAI GPT-4 (veya yerel model) ile doğal dilde yanıt üretimi
+- Google Gemini Pro ile doğal dilde yanıt üretimi
 - Streamlit tabanlı sade kullanıcı arayüzü
 - Modüler Python 3.10+ kod yapısı
 
@@ -17,13 +17,12 @@ Kurumsal PDF dokümanlarından anlam çıkaran, kullanıcıların bu dokümanlar
    ```bash
    pip install -r requirements.txt
    ```
-3. `.env` dosyasını oluşturun ve OpenAI API anahtarınızı, model adını vb. girin:
+3. `.env` dosyasını oluşturun ve Gemini API anahtarınızı girin:
    ```env
-   OPENAI_API_KEY=your_openai_key
-   OPENAI_EMBEDDING_MODEL=text-embedding-ada-002
-   OPENAI_LLM_MODEL=gpt-4
+   GEMINI_API_KEY=your_gemini_api_key
    CHROMA_DB_PATH=./chroma_db
    ```
+   Gemini API anahtarınızı almak için: https://aistudio.google.com/app/apikey
 
 ## Kullanım
 1. `app.py` dosyasını çalıştırın:
@@ -36,8 +35,8 @@ Kurumsal PDF dokümanlarından anlam çıkaran, kullanıcıların bu dokümanlar
 ## Dosya Yapısı
 - `app.py` : Streamlit arayüzü ve entegrasyon
 - `pdf_parser.py` : PDF okuma ve parçalara ayırma
-- `vector_store.py` : Embedding ve ChromaDB işlemleri
-- `qa_engine.py` : Prompt oluşturma ve yanıt üretimi
+- `vector_store.py` : Embedding ve ChromaDB işlemleri (Gemini API ile)
+- `qa_engine.py` : Prompt oluşturma ve yanıt üretimi (Gemini API ile)
 - `requirements.txt` : Bağımlılıklar
 - `README.md` : Proje açıklaması
 
