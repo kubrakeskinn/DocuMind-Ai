@@ -1,4 +1,5 @@
 # DocuMind AI: Kurumsal PDF Soru-Cevap Platformu
+![Ekran görüntüsü 2025-06-30 154655](https://github.com/user-attachments/assets/e3571138-3346-44d6-ae52-64f8b6896e1b)
 
 ## Proje Hakkında
 
